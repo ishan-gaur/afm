@@ -1,2 +1,1 @@
-# pem
-Protein Edit Model
+Protein Editing Model
