@@ -3,12 +3,12 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "pem"
+name = "afm"
 version = "0.0.0"
 authors = [
   { name="Ishan Gaur", email="ishangaur@gmail.com" },
 ]
-description = "Protein Editing Model"
+description = "Action Flow Model"
 readme = "README.md"
 requires-python = ">=3.12"
 classifiers = [
@@ -17,4 +17,4 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/ishan-gaur/pem"
+Homepage = "https://github.com/ishan-gaur/afm"
