@@ -1,7 +1,15 @@
-name: pem
+name: base
 channels:
   - conda-forge
 dependencies:
   - python=3.12
+  - pip
+  - conda[version='>=24.7.1']
+  - mamba[version='>=1.5.9']
   - ipykernel
-prefix: /home/ishan/miniforge3/envs/pem
+  - fire
+  - ca-certificates
+  - certifi
+  - openssl
+  - python-dotenv
+prefix: /home/ishan/miniforge3

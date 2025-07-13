@@ -5,4 +5,22 @@
 # for now anyways only the AA and - will show up in the data, the rest will also manually be masked out, but for general actions,
 # they might be useful
 
-from esm.tokenization.sequence_tokenizer import EsmSequenceTokenizer as ProteinTokenizer
+import torch
+from esm.tokenization.sequence_tokenizer import EsmSequenceTokenizer
+from typing import List, cast
+from functools import cache
+
+@cache
+def _get_esm_tokenizer() -> EsmSequenceTokenizer:
+    return EsmSequenceTokenizer()
+
+def tokenize_protein_batch(batch: List[str]) -> torch.Tensor:
+    tokenizer = _get_esm_tokenizer()
+    tokenized = tokenizer.batch_encode_plus(
+        batch,
+        padding=True,
+        truncation=False,
+        return_tensors='pt'
+    )
+    tokenized_batch_BSH = cast(torch.Tensor, tokenized['input_ids']) # otherwise type EncodingFast
+    return tokenized_batch_BSH
